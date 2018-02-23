@@ -43,7 +43,8 @@ public class hoist extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	if  (Robot.oi.xbox360.getRawAxis(5) > -0.2 && Robot.oi.xbox360.getRawAxis(5) < 0.2) {
+    	//ONLY ALLOW POSITIVE NUMBERS!!! OR WINCH WILL BREAK!
+    	if  (Robot.oi.xbox360.getRawAxis(5) < 0.2) {
     		Robot.winchSubsystem.stopWinch();
     	}
     	else Robot.winchSubsystem.hoist(Robot.oi.xbox360.getRawAxis(5));
