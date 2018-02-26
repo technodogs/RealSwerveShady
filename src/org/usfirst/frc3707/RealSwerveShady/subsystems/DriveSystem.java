@@ -15,8 +15,8 @@ package org.usfirst.frc3707.RealSwerveShady.subsystems;
 import org.usfirst.frc3707.RealSwerveShady.RobotMap;
 import org.usfirst.frc3707.RealSwerveShady.commands.*;
 
-import org.usfirst.frc3707.SwerveRobot.swerve.SwerveDrive;
-import org.usfirst.frc3707.SwerveRobot.swerve.SwerveWheel;
+import org.usfirst.frc3707.lib.swerve.SwerveDrive;
+import org.usfirst.frc3707.lib.swerve.SwerveWheel;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
@@ -73,6 +73,8 @@ public class DriveSystem extends Subsystem {
     }
 
     private final ADXRS450_Gyro gyro = RobotMap.gyro;
+    
+   
     
     
     SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, -20);
