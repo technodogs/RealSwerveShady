@@ -61,7 +61,7 @@ Children:
           validators: &id005 [ChildDropdownSelected]
           value: DriveSystem FrontRightEncoder
         Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Send to SmartDashboard, validators: null, value: true}
+          name: Send to SmartDashboard, validators: null, value: false}
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Output: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -129,7 +129,7 @@ Children:
           validators: *id005
           value: DriveSystem FrontLeftEncoder
         Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Send to SmartDashboard, validators: null, value: true}
+          name: Send to SmartDashboard, validators: null, value: false}
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Output: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -197,7 +197,7 @@ Children:
           validators: *id005
           value: DriveSystem BackRightEncoder
         Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Send to SmartDashboard, validators: null, value: true}
+          name: Send to SmartDashboard, validators: null, value: false}
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Output: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -265,7 +265,7 @@ Children:
           validators: *id005
           value: DriveSystem BackLeftEncoder
         Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
-          name: Send to SmartDashboard, validators: null, value: true}
+          name: Send to SmartDashboard, validators: null, value: false}
         Maximum Output: !!robotbuilder.data.properties.DoubleProperty {default: 1,
           name: Maximum Output, validators: null, value: 1.0}
         Output: !!robotbuilder.data.properties.ChildSelectionProperty
@@ -521,6 +521,36 @@ Children:
         value: *id012
     Base: Subsystem
     Name: winchSubsystem
+  - Children:
+    - Children: []
+      Properties:
+        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11',
+            '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23',
+            '24', '25']
+          default: '0'
+          name: Input Channel (Digital)
+          validators: [DigitalChannel]
+          value: '2'
+      Base: Digital Input
+      Name: FrontRightSonar
+    Properties:
+      Send to SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Send to SmartDashboard, validators: null, value: false}
+      Default command parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Default command parameters
+        validators: null
+        value: []
+      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Default Command, type: Command, validators: null, value: None}
+      Constants: !!robotbuilder.data.properties.ConstantsProperty
+        default: []
+        name: Constants
+        validators: null
+        value: []
+    Base: Subsystem
+    Name: DistanceSubsystem
   Properties: {}
   Base: Subsystems
   Name: Subsystems
@@ -936,7 +966,8 @@ Children:
                 name: Parameters
                 validators: null
                 value:
-                - *id018
+                - !!robotbuilder.data.properties.ParameterDescriptor {name: timeout,
+                  type: double}
               - !!robotbuilder.data.properties.ParameterSetProperty
                 default: &id022 []
                 name: Parameter presets
@@ -983,8 +1014,8 @@ Children:
   Base: Commands
   Name: Commands
 Properties:
-  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: /Users/hog108/workspace,
-    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: ../}
+  Eclipse Workspace: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\3707\workspace',
+    extension: null, folder: true, name: Eclipse Workspace, validators: null, value: ..\}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
   Autonomous command parameters: !!robotbuilder.data.properties.ParametersProperty
@@ -1002,8 +1033,8 @@ Properties:
     name: Export Subsystems, validators: null, value: true}
   Simulation World File: !!robotbuilder.data.properties.StringProperty {default: /usr/share/frcsim/worlds/GearsBotDemo.world,
     name: Simulation World File, validators: null, value: /usr/share/frcsim/worlds/GearsBotDemo.world}
-  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: /Users/hog108/,
-    extension: null, folder: true, name: Wiring file location, validators: null, value: ./}
+  Wiring file location: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\3707\',
+    extension: null, folder: true, name: Wiring file location, validators: null, value: .\}
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
     name: Autonomous Command, type: Command, validators: null, value: Autonomous Command}
 Base: Robot
