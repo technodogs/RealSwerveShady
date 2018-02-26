@@ -44,7 +44,7 @@ public class joystick_drive_swerve extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    		Robot.driveSystem.drive(Robot.oi.joystick1.getRawAxis(0), Robot.oi.joystick1.getRawAxis(1),Robot.oi.joystick1.getRawAxis(4), Robot.oi.joystick1.getRawButton(3),Robot.oi.joystick1.getRawButton(6));
+    		Robot.driveSystem.drive(Robot.oi.joystick0.getRawAxis(0), Robot.oi.joystick0.getRawAxis(1),Robot.oi.joystick0.getRawAxis(4), Robot.oi.joystick0.getRawButton(3),Robot.oi.joystick0.getRawButton(6));
     }
 
     // Make this return true when this Command no longer needs to run execute()
