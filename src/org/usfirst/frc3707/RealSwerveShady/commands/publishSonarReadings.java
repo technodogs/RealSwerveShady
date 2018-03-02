@@ -46,12 +46,14 @@ public class publishSonarReadings extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	SmartDashboard.putNumber("Forward Right Detect", RobotMap.forwardRightSonar.getDistance());
-    	SmartDashboard.putNumber("Forward Left Detect", RobotMap.forwardLeftSonar.getDistance());
-    	SmartDashboard.putNumber("Right Side For Detect", RobotMap.rightSideForSonar.getDistance());
-    	SmartDashboard.putNumber("Right Side Aft Detect", RobotMap.rightSideAftSonar.getDistance());
-    	SmartDashboard.putNumber("Left Side For Detect", RobotMap.leftSideForSonar.getDistance());
-    	SmartDashboard.putNumber("Left Side Aft Detect", RobotMap.leftSideAftSonar.getDistance());
+    	SmartDashboard.putNumber("Forward Right Detect", Math.round(RobotMap.forwardRightSonar.getDistance()));
+    	SmartDashboard.putNumber("Forward Left Detect", Math.round(RobotMap.forwardLeftSonar.getDistance()));
+    	SmartDashboard.putNumber("Right Side For Detect", Math.round(RobotMap.rightSideForSonar.getDistance()));
+    	SmartDashboard.putNumber("Right Side Aft Detect", Math.round(RobotMap.rightSideAftSonar.getDistance()));
+    	SmartDashboard.putNumber("Left Side For Detect", Math.round(RobotMap.leftSideForSonar.getDistance()));
+    	SmartDashboard.putNumber("Left Side Aft Detect", Math.round(RobotMap.leftSideAftSonar.getDistance()));
+    	SmartDashboard.putNumber("lidar", Math.round(RobotMap.lidar.getDistance()));
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()

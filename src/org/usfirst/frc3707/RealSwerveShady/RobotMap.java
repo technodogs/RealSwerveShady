@@ -71,6 +71,7 @@ public class RobotMap {
     public static PWInput rightSideAftSonar;
     public static PWInput leftSideForSonar;
     public static PWInput leftSideAftSonar;
+    public static PWInput lidar;
     // END ERW
     
     public static ADXRS450_Gyro gyro;
@@ -194,6 +195,8 @@ public class RobotMap {
         leftSideAftSonar = new PWInput(new DigitalInput(7) , 0, 4, 57.874, 1);
         leftSideForSonar = new PWInput(new DigitalInput(8) , 0, 4, 57.874, 1);
         forwardLeftSonar = new PWInput(new DigitalInput(9) , 0, 4, 57.874, 1);
+        lidar = new PWInput(new DigitalInput(10) , 0, 4, 10, 1);
+        
         // END ERW
     }
 }
