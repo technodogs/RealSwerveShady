@@ -72,7 +72,7 @@ public class DriveSystem extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
 
-    private final ADXRS450_Gyro gyro = RobotMap.gyro;
+    public final ADXRS450_Gyro gyro = RobotMap.gyro;
     
     SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, -20);
     SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 135);

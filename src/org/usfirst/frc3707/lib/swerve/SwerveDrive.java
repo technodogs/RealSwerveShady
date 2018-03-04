@@ -1,5 +1,7 @@
 package org.usfirst.frc3707.lib.swerve;
 
+import org.usfirst.frc3707.RealSwerveShady.RobotMap;
+
 import edu.wpi.first.wpilibj.GyroBase;
 import edu.wpi.first.wpilibj.PIDOutput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -28,9 +30,9 @@ public class SwerveDrive implements PIDOutput {
     
     public void drive(double directionX, double directionY, double rotation, boolean useGyro, boolean slowSpeed) {
     	
-//		SmartDashboard.putNumber("directionX", directionX);
-//		SmartDashboard.putNumber("directionY", directionY);
-//		SmartDashboard.putNumber("rotation", rotation);
+		SmartDashboard.putNumber("directionX", directionX);
+		SmartDashboard.putNumber("directionY", directionY);
+		SmartDashboard.putNumber("rotation", rotation);
 		 
 		//if BOTH joystick in the center
 		if((directionX < 0.2 && directionX > -0.2) && (directionY < 0.2 && directionY > -0.2) && (rotation < 0.2 && rotation > -0.2)) {
@@ -109,19 +111,39 @@ public class SwerveDrive implements PIDOutput {
 		this.rightBackWheel.drive(backRightSpeed, backRightAngle);
     }
     public void driveSimple(double speed, double angle) {
-		this.rightFrontWheel.drive(speed, angle);
+    	//reverse it because encoders think 0 is backwards
+    	angle = reverseAngle(angle);
+    	double gyroAngle = normalizeGyroAngle(RobotMap.gyro.getAngle()); 
+    	angle = normalizeGyroAngle(angle + gyroAngle);
+    	
+    	this.rightFrontWheel.drive(speed, angle);
 		this.leftFrontWheel.drive(speed, angle);
 		this.leftBackWheel.drive(speed, angle);
 		this.rightBackWheel.drive(speed, angle);
     }
+    
+//    public void spinSimple(double speed) {
+//    	this.rightFrontWheel.drive(speed, 45);
+//		this.leftFrontWheel.drive(speed, 45);
+//		this.leftBackWheel.drive(speed, 45);
+//		this.rightBackWheel.drive(speed, 45);
+//    }
 
 	@Override
 	public void pidWrite(double output) {
 		System.out.println("X");
 		System.out.println(output);
-		driveSimple(output, 0.0);
+		System.out.println("ANGLE");
+		System.out.println(gyro.getAngle());
+		drive(0.01, 0.01, output, false, false);
 	}
-
+	public double reverseAngle(double angle) {
+    	double reversed = 180 - angle;
+    	if(reversed > 0) {
+    		reversed += 360;
+    	}
+    	return reversed;
+    }
     public double normalizeGyroAngle(double angle){
         return (angle - (Math.floor( angle / 360) * 360) );
     }
