@@ -112,7 +112,7 @@ public class SwerveDrive implements PIDOutput {
     }
     public void driveSimple(double speed, double angle) {
     	//reverse it because encoders think 0 is backwards
-    	angle = reverseAngle(angle);
+    	//angle = reverseAngle(angle);
     	double gyroAngle = normalizeGyroAngle(RobotMap.gyro.getAngle()); 
     	angle = normalizeGyroAngle(angle + gyroAngle);
     	
