@@ -50,13 +50,13 @@ public class clawSubsystem extends Subsystem {
         // setDefaultCommand(new MySpecialCommand());
     }
     public void succ(double succSpeed) {
-    	leftClaw.set(succSpeed);
-    	rightClaw.set(succSpeed*-1);
+    	leftClaw.set(succSpeed*-1);
+    	rightClaw.set(succSpeed);
 
     }
     public void spit(double spitSpeed) {
-    	leftClaw.set(spitSpeed*-1);
-    	rightClaw.set(spitSpeed);
+    	leftClaw.set(spitSpeed);
+    	rightClaw.set(spitSpeed*-1);
 
 
     }

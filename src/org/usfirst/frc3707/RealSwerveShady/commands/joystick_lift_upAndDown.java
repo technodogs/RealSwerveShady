@@ -43,7 +43,7 @@ public class joystick_lift_upAndDown extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-	    	if (Robot.oi.joystick1.getRawAxis(1) > -0.2 && (Robot.oi.joystick1.getRawAxis(1)) < 0.2 ) {
+	    	if (Robot.oi.joystick1.getRawAxis(1) > -0.3 && (Robot.oi.joystick1.getRawAxis(1)) < 0.3 ) {
 	    		Robot.clawLiftSubsystem.stopClawLift();
 	    	}
 	    	else {
