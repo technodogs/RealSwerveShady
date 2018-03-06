@@ -25,6 +25,7 @@ import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.PIDController;
+import edu.wpi.first.wpilibj.Preferences;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.smartdashboard.*;
@@ -75,16 +76,16 @@ public class DriveSystem extends Subsystem {
     public final ADXRS450_Gyro gyro = RobotMap.gyro;
     
       //PRACTICE ROBOT
-//    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, -20);
-//    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 135);
-//    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, -75);
-//    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 12);
+    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, -20); //Preferences.getInstance().getDouble("frontLeftOffset", -20)
+    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 138);
+    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, -75);
+    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 12);
     
     // COMP ROBOT
-    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 20);
-    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, -135);
-    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, -12);
-    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, -32);
+//    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 20);
+//    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, -135);
+//    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, -12);
+//    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, -32);
     public SwerveDrive swerve = new SwerveDrive(frontRightWheel, frontLeftWheel, backLeftWheel, backRightWheel, gyro);
     
     public void enable() {
