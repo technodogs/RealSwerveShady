@@ -69,6 +69,9 @@ public class clawLiftSubsystem extends Subsystem {
     public void moveLiftUp() {
     	clawLiftMotor.set(1);
     }
+    public void moveLiftUpSlow() {
+    	clawLiftMotor.set(0.6);
+    }
     public void moveLiftDown () {
     	clawLiftMotor.set(-0.8);
     }

@@ -904,8 +904,8 @@ Children:
         validators: &id028 [List]
         value:
         - &id024 !!robotbuilder.data.CommandGroupEntry
-          command: &id030
-            base: &id029
+          command:
+            base:
               help: A command specifies an action that the robot can perform.
               name: Command
               properties:
@@ -980,7 +980,7 @@ Children:
               type: double, value: '3'}
           previous: *id024
         - !!robotbuilder.data.CommandGroupEntry
-          command: &id033
+          command:
             base: *id025
             name: auto_claw_spitTimed
             properties: *id026
@@ -1113,128 +1113,7 @@ Children:
         default: []
         name: Commands
         validators: *id028
-        value:
-        - !!robotbuilder.data.CommandGroupEntry
-          command:
-            base: *id029
-            name: dashboard_resetGyro
-            properties: &id036
-              Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {
-                default: false, name: Autonomous Selection, validators: null, value: false}
-              Parameters: !!robotbuilder.data.properties.ParametersProperty
-                default: []
-                name: Parameters
-                validators: null
-                value: []
-              Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {
-                default: false, name: Run When Disabled, validators: null, value: true}
-              Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: Requires, type: Subsystem, validators: null, value: None}
-              Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-                default: []
-                name: Parameter presets
-                validators: null
-                value: []
-              Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
-                default: true, name: Button on SmartDashboard, validators: null, value: true}
-          hasMatch: true
-          order: Parallel
-          parameters:
-            default: []
-            name: ParametersProperty
-            validators: null
-            value: []
-          previous: null
-        - &id032 !!robotbuilder.data.CommandGroupEntry
-          command: *id030
-          hasMatch: true
-          order: Sequential
-          parameters:
-            default: []
-            name: ParametersProperty
-            validators: null
-            value: []
-          previous: null
-        - &id034 !!robotbuilder.data.CommandGroupEntry
-          command:
-            base:
-              help: A Command that chooses between two Commands
-              name: Conditional Command
-              properties:
-              - !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: On True Command, type: Command, validators: null, value: None}
-              - !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-                name: On False Command, type: Command, validators: null, value: None}
-              - !!robotbuilder.data.properties.ParametersProperty
-                default: []
-                name: Parameters
-                validators: null
-                value: []
-              - !!robotbuilder.data.properties.ParameterSetProperty
-                default: &id031 []
-                name: Parameter presets
-                validators: null
-                value: *id031
-              - !!robotbuilder.data.properties.BooleanProperty {default: true, name: Button on SmartDashboard,
-                validators: null, value: true}
-              - !!robotbuilder.data.properties.BooleanProperty {default: false, name: Run When Disabled,
-                validators: null, value: false}
-              - !!robotbuilder.data.properties.BooleanProperty {default: false, name: Autonomous Selection,
-                validators: null, value: false}
-              supports: {}
-              type: Command
-            name: auto_choose_direction
-            properties: &id035
-              Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {
-                default: false, name: Autonomous Selection, validators: null, value: false}
-              On True Command: !!robotbuilder.data.properties.TypeSelectionProperty {
-                default: None, name: On True Command, type: Command, validators: null,
-                value: auto_drive_directionSensor}
-              Parameters: !!robotbuilder.data.properties.ParametersProperty
-                default: []
-                name: Parameters
-                validators: null
-                value:
-                - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: angle,
-                  type: double, value: '0'}
-                - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: distance,
-                  type: double, value: '0'}
-              Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {
-                default: false, name: Run When Disabled, validators: null, value: false}
-              Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-                default: []
-                name: Parameter presets
-                validators: null
-                value: []
-              On False Command: !!robotbuilder.data.properties.TypeSelectionProperty {
-                default: None, name: On False Command, type: Command, validators: null,
-                value: auto_drive_directionSensor}
-              Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {
-                default: true, name: Button on SmartDashboard, validators: null, value: true}
-          hasMatch: true
-          order: Sequential
-          parameters:
-            default: []
-            name: ParametersProperty
-            validators: null
-            value:
-            - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: angle,
-              type: double, value: '0'}
-            - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: distance,
-              type: double, value: '0'}
-          previous: *id032
-        - !!robotbuilder.data.CommandGroupEntry
-          command: *id033
-          hasMatch: true
-          order: Sequential
-          parameters:
-            default: []
-            name: ParametersProperty
-            validators: null
-            value:
-            - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: timeout,
-              type: double, value: '0'}
-          previous: *id034
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command Group
@@ -1250,6 +1129,8 @@ Children:
         value:
         - !!robotbuilder.data.properties.ParameterDescriptor {name: angle, type: double}
         - !!robotbuilder.data.properties.ParameterDescriptor {name: distance, type: double}
+        - !!robotbuilder.data.properties.ParameterDescriptor {name: sensor, type: String}
+        - !!robotbuilder.data.properties.ParameterDescriptor {name: min, type: boolean}
       Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
         name: Run When Disabled, validators: null, value: false}
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -1264,11 +1145,53 @@ Children:
     Base: Command
     Name: auto_drive_directionSensor
   - Children: []
-    Properties: *id035
+    Properties:
+      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Autonomous Selection, validators: null, value: false}
+      On True Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: On True Command, type: Command, validators: null, value: auto_drive_directionSensor}
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value:
+        - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: angle, type: double,
+          value: '0'}
+        - !!robotbuilder.data.properties.ValuedParameterDescriptor {name: distance,
+          type: double, value: '0'}
+      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Run When Disabled, validators: null, value: false}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: []
+        name: Parameter presets
+        validators: null
+        value: []
+      On False Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: On False Command, type: Command, validators: null, value: auto_drive_directionSensor}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
     Base: Conditional Command
     Name: auto_choose_direction
   - Children: []
-    Properties: *id036
+    Properties:
+      Autonomous Selection: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Autonomous Selection, validators: null, value: false}
+      Parameters: !!robotbuilder.data.properties.ParametersProperty
+        default: []
+        name: Parameters
+        validators: null
+        value: []
+      Run When Disabled: !!robotbuilder.data.properties.BooleanProperty {default: false,
+        name: Run When Disabled, validators: null, value: true}
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: None}
+      Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
+        default: []
+        name: Parameter presets
+        validators: null
+        value: []
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
     Base: Command
     Name: dashboard_resetGyro
   - Children: []
@@ -1307,10 +1230,10 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: None}
       Parameter presets: !!robotbuilder.data.properties.ParameterSetProperty
-        default: &id037 []
+        default: []
         name: Parameter presets
         validators: null
-        value: *id037
+        value: []
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
     Base: Command

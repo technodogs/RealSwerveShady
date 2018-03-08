@@ -43,10 +43,10 @@ public class auto_drive_rotateToAngle extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	pidController.setAbsoluteTolerance(2);
-    	pidController.setOutputRange(-0.5, 0.5);
-    	//pidController.setInputRange(0, 360);
-    	//pidController.setContinuous();
+    	pidController.setAbsoluteTolerance(5);
+    	pidController.setOutputRange(-0.3, 0.3);
+    	pidController.setInputRange(0, 360);
+    	pidController.setContinuous();
     	pidController.enable();
     }
 
