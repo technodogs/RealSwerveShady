@@ -84,8 +84,8 @@ public class Robot extends TimedRobot {
         
         new Thread(() -> {
             UsbCamera camera = CameraServer.getInstance().startAutomaticCapture("FrontViewRaw", 0);
-            camera.setResolution(640, 480);
-            camera.setFPS(30);
+            camera.setResolution(320, 240);
+            camera.setFPS(15);
             
 //            CvSink cvSink = CameraServer.getInstance().getVideo();
 //            CvSource outputStream = CameraServer.getInstance().putVideo("FrontViewData", 640, 480);
