@@ -117,14 +117,17 @@ public class Robot extends TimedRobot {
                 	Rect r = Imgproc.boundingRect(bestContour);
                 	SmartDashboard.putBoolean("boxSee", true);
                 	SmartDashboard.putNumber("boxCenterX", (r.width / 2) + r.x);
-                	//SmartDashboard.putNumber("boxCenterX", r.x);
-                	SmartDashboard.putNumber("boxCenterY", r.y);
-                	SmartDashboard.putNumber("contours", contours.size());
                 }
                 else {
                 	SmartDashboard.putBoolean("boxSee", false);
                 	SmartDashboard.putNumber("boxCenterX", -1);
                 }
+                try {
+					Thread.sleep(50);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         }).start();
         
