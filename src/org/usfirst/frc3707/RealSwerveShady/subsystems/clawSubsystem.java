@@ -61,8 +61,7 @@ public class clawSubsystem extends Subsystem {
 
     }
     public boolean  haveBox () {
-    	return false;
-    	//return !boxState.get();
+    	return !boxState.get();
     }
    
     

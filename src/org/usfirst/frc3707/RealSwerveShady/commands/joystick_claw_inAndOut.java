@@ -44,13 +44,7 @@ public class joystick_claw_inAndOut extends Command {
     @Override
     protected void execute() {
 	    	if (Robot.oi.joystick1.getRawAxis(3) >0.2) {
-	    		if (Robot.clawSubsystem.haveBox() ) {
-	    			Robot.clawSubsystem.succ(0.0);
-	    		}
-	    		else {
-	    			Robot.clawSubsystem.succ(Robot.oi.joystick1.getRawAxis(3));
-	    		}
-	    		
+	    		Robot.clawSubsystem.succ(Robot.oi.joystick1.getRawAxis(3));
 	    	}
 	    	else {
 	    		Robot.clawSubsystem.spit(Robot.oi.joystick1.getRawAxis(2));
