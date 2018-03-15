@@ -80,11 +80,9 @@ public class OI {
 
         // SmartDashboard Buttons
         SmartDashboard.putData("auto_claw_spitTimed", new auto_claw_spitTimed());
-        SmartDashboard.putData("auto_drive_directionTimed", new auto_drive_directionTimed());
         SmartDashboard.putData("auto_lift_moveToMiddle", new auto_lift_moveToMiddle());
         SmartDashboard.putData("auto_lift_moveToLow", new auto_lift_moveToLow());
         SmartDashboard.putData("auto_lift_moveToHigh", new auto_lift_moveToHigh());
-        SmartDashboard.putData("auto_action_straightToSwitch", new auto_action_straightToSwitch());
         SmartDashboard.putData("publishSonarReadings", new publishSonarReadings());
         SmartDashboard.putData("auto_strategy_positionLeft", new auto_strategy_positionLeft());
         SmartDashboard.putData("auto_strategy_positionRight", new auto_strategy_positionRight());
