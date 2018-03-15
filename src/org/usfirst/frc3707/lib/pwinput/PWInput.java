@@ -99,6 +99,21 @@ public class PWInput implements PIDSource {
 		msPerUnit = origMsPerUnit;
 		return (rval);
 	}
+	
+	private double ignoreBigDelta(double distance) {
+		if(lastReading == 0) {
+			return distance;
+		}
+		else if(distance > lastReading + 100) {
+			return lastReading;
+		}
+		else if(distance < lastReading - 100) {
+			return lastReading;
+		}
+		else {
+			return distance;
+		}
+	}
 		
 	
 	public double getDistance() {
@@ -111,6 +126,7 @@ public class PWInput implements PIDSource {
 		}
 		rval = (counter.getPeriod() * 1000000.0 / msPerUnit);
 		rval = handleIgnore(rval);
+		rval = ignoreBigDelta(rval);
 		lastReading = rval;
 		return rval;
 	}

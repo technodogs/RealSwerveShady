@@ -123,19 +123,26 @@ public class SwerveDrive implements PIDOutput {
     }
     
 //    public void spinSimple(double speed) {
-//    	this.rightFrontWheel.drive(speed, 45);
-//		this.leftFrontWheel.drive(speed, 45);
-//		this.leftBackWheel.drive(speed, 45);
-//		this.rightBackWheel.drive(speed, 45);
+//    	this.rightFrontWheel.drive(speed, reverseAngle(79));
+//		this.leftFrontWheel.drive(speed, reverseAngle(346));
+//		this.leftBackWheel.drive(speed, reverseAngle(32));
+//		this.rightBackWheel.drive(speed, reverseAngle(93));
+//    }
+    
+//    public void spinSimple(double speed) {
+//    	//this.rightFrontWheel.drive(speed, 45);
+//		//this.leftFrontWheel.drive(speed, 45);
+//		//this.leftBackWheel.drive(speed, 45);
+//		//this.rightBackWheel.drive(speed, 0);
 //    }
 
 	@Override
 	public void pidWrite(double output) {
-		System.out.println("X");
-		System.out.println(output);
-		System.out.println("ANGLE");
-		System.out.println(gyro.getAngle());
-		drive(0.01, 0.01, output, false, false);
+//		System.out.println("X");
+//		System.out.println(output);
+//		System.out.println("ANGLE");
+//		System.out.println(gyro.getAngle());
+		drive(0, 0, output, false, false);
 	}
 	public double reverseAngle(double angle) {
     	double reversed = 180 - angle;

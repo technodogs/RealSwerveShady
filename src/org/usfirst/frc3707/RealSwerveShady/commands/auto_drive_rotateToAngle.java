@@ -48,6 +48,7 @@ public class auto_drive_rotateToAngle extends Command {
     	pidController.setInputRange(0, 360);
     	pidController.setContinuous();
     	pidController.enable();
+    	Robot.driveSystem.enable();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -66,6 +67,7 @@ public class auto_drive_rotateToAngle extends Command {
     @Override
     protected void end() {
     	pidController.disable();
+    	Robot.driveSystem.disable();
     }
 
     // Called when another command which requires one or more of the same
