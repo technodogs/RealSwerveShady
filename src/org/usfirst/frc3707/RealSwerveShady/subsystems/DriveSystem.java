@@ -75,16 +75,16 @@ public class DriveSystem extends Subsystem {
     public final ADXRS450_Gyro gyro = RobotMap.gyro;
     
       //PRACTICE ROBOT
-//    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, -20); //Preferences.getInstance().getDouble("frontLeftOffset", -20)
-//    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 138);
-//    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, -75);
-//    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 12);
+    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 340); //Preferences.getInstance().getDouble("frontLeftOffset", -20)
+    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 341);
+    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, 210);
+    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 12);
    
     // COMP ROBOT
-    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 201);
-    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 39);
-    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, 167);
-    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 144);
+//    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 201);
+//    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 39);
+//    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, 284);
+//    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 146);
     public SwerveDrive swerve = new SwerveDrive(frontRightWheel, frontLeftWheel, backLeftWheel, backRightWheel, gyro);
     
     public void enable() {

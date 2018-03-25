@@ -55,8 +55,17 @@ public class clawSubsystem extends Subsystem {
 
     }
     public void spit(double spitSpeed) {
-    	leftClaw.set(spitSpeed);
-    	rightClaw.set(spitSpeed*-1);
+    	spit(spitSpeed, false);
+    }
+    public void spit(double spitSpeed, boolean slow) {
+    	if(slow) {
+	    	leftClaw.set(spitSpeed * 0.5);
+	    	rightClaw.set((spitSpeed * 0.5)*-1);
+    	}
+    	else {
+    		leftClaw.set(spitSpeed);
+	    	rightClaw.set(spitSpeed*-1);
+    	}
 
 
     }

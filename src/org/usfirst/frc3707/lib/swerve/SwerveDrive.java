@@ -34,18 +34,18 @@ public class SwerveDrive implements PIDOutput {
 		SmartDashboard.putNumber("directionY", directionY);
 		SmartDashboard.putNumber("rotation", rotation);
 		 
-		//if BOTH joystick in the center
-		if((directionX < 0.2 && directionX > -0.2) && (directionY < 0.2 && directionY > -0.2) && (rotation < 0.2 && rotation > -0.2)) {
-			this.rightFrontWheel.updateSpeed(0);
-			this.leftFrontWheel.updateSpeed(0);
-			this.leftBackWheel.updateSpeed(0);
-			this.rightBackWheel.updateSpeed(0);
-			return;
-		}
-		//if ROTATION joystick only near the center (this fixes the rotation drift)
-		else if (rotation < 0.2 && rotation > -0.2) {
-			rotation = 0;
-		}
+//		//if BOTH joystick in the center
+//		if((directionX < 0.2 && directionX > -0.2) && (directionY < 0.2 && directionY > -0.2) && (rotation < 0.2 && rotation > -0.2)) {
+//			this.rightFrontWheel.updateSpeed(0);
+//			this.leftFrontWheel.updateSpeed(0);
+//			this.leftBackWheel.updateSpeed(0);
+//			this.rightBackWheel.updateSpeed(0);
+//			return;
+//		}
+//		//if ROTATION joystick only near the center (this fixes the rotation drift)
+//		else if (rotation < 0.2 && rotation > -0.2) {
+//			rotation = 0;
+//		}
 		
 		double L = this.wheelbase; 					//distance between front and back wheels
 		double W = this.trackwidth; 				//distance between front wheels

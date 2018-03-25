@@ -47,7 +47,7 @@ public class joystick_claw_inAndOut extends Command {
 	    		Robot.clawSubsystem.succ(Robot.oi.joystick1.getRawAxis(3));
 	    	}
 	    	else {
-	    		Robot.clawSubsystem.spit(Robot.oi.joystick1.getRawAxis(2));
+	    		Robot.clawSubsystem.spit(Robot.oi.joystick1.getRawAxis(2), Robot.oi.joystick1.getRawButton(6));
 	    	}
     }
 
