@@ -50,8 +50,7 @@ public class joystick_drive_swerve extends Command {
     protected void execute() {
     	
     	//decide to use joystick or box align
-    	//rotation = Robot.oi.joystick0.getRawAxis(4);
-    	rotation = Robot.oi.joystick2.getRawAxis(0);
+    	rotation = Robot.oi.joystick0.getRawAxis(4);
 //    	if(Robot.oi.joystick0.getRawButton(5)) {
 //    		if(SmartDashboard.getBoolean("boxSee", false)) {
 //    			if(SmartDashboard.getNumber("boxCenterX", 149) < 145) {
@@ -66,7 +65,7 @@ public class joystick_drive_swerve extends Command {
 //    			
 //    		}
 //    	}
-    	Robot.driveSystem.drive(Robot.oi.joystick0.getRawAxis(0), Robot.oi.joystick0.getRawAxis(1), rotation, Robot.oi.joystick0.getRawButton(2),Robot.oi.joystick2.getRawButton(2));
+    	Robot.driveSystem.drive(Robot.oi.joystick0.getRawAxis(0), Robot.oi.joystick0.getRawAxis(1), rotation, Robot.oi.joystick0.getRawButton(5),Robot.oi.joystick0.getRawButton(6));
     }
 
     // Make this return true when this Command no longer needs to run execute()

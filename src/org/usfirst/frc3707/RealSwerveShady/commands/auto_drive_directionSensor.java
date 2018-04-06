@@ -88,16 +88,20 @@ public class auto_drive_directionSensor extends Command {
     }
     
     private boolean isFrontDistanceComplete() {
-    	return isDistanceComplete(RobotMap.forwardRightSonar) && isDistanceComplete(RobotMap.forwardLeftSonar);
+    	//return isDistanceComplete(RobotMap.forwardRightSonar) && isDistanceComplete(RobotMap.forwardLeftSonar);
+    	return true;
     }
     private boolean isLeftDistanceComplete() {
-    	return isDistanceComplete(RobotMap.leftSideForSonar) && isDistanceComplete(RobotMap.leftSideAftSonar);
+    	//return isDistanceComplete(RobotMap.leftSideForSonar) && isDistanceComplete(RobotMap.leftSideAftSonar);
+    	return true;
     }
     private boolean isRightDistanceComplete() {
-    	return isDistanceComplete(RobotMap.rightSideForSonar) && isDistanceComplete(RobotMap.rightSideAftSonar);
+    	//return isDistanceComplete(RobotMap.rightSideForSonar) && isDistanceComplete(RobotMap.rightSideAftSonar);
+    	return true;
     }
     private boolean isBackDistanceComplete() {
-    	return isDistanceComplete(RobotMap.forwardRightSonar) && isDistanceComplete(RobotMap.forwardLeftSonar);
+    	//return isDistanceComplete(RobotMap.forwardRightSonar) && isDistanceComplete(RobotMap.forwardLeftSonar);
+    	return true;
     }
     private boolean isDistanceComplete(PWInput sensor) {
     	if(m_min) {

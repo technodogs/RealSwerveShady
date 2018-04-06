@@ -47,12 +47,12 @@ public class publishSonarReadings extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	SmartDashboard.putNumber("Forward Right Detect", Math.round(RobotMap.forwardRightSonar.getDistance()));
-    	SmartDashboard.putNumber("Forward Left Detect", Math.round(RobotMap.forwardLeftSonar.getDistance()));
-    	SmartDashboard.putNumber("Right Side For Detect", Math.round(RobotMap.rightSideForSonar.getDistance()));
-    	SmartDashboard.putNumber("Right Side Aft Detect", Math.round(RobotMap.rightSideAftSonar.getDistance()));
-    	SmartDashboard.putNumber("Left Side For Detect", Math.round(RobotMap.leftSideForSonar.getDistance()));
-    	SmartDashboard.putNumber("Left Side Aft Detect", Math.round(RobotMap.leftSideAftSonar.getDistance()));
+//    	SmartDashboard.putNumber("Forward Right Detect", Math.round(RobotMap.forwardRightSonar.getDistance()));
+//    	SmartDashboard.putNumber("Forward Left Detect", Math.round(RobotMap.forwardLeftSonar.getDistance()));
+//    	SmartDashboard.putNumber("Right Side For Detect", Math.round(RobotMap.rightSideForSonar.getDistance()));
+//    	SmartDashboard.putNumber("Right Side Aft Detect", Math.round(RobotMap.rightSideAftSonar.getDistance()));
+//    	SmartDashboard.putNumber("Left Side For Detect", Math.round(RobotMap.leftSideForSonar.getDistance()));
+//    	SmartDashboard.putNumber("Left Side Aft Detect", Math.round(RobotMap.leftSideAftSonar.getDistance()));
     	SmartDashboard.putNumber("lidar", Math.round(RobotMap.lidar.getDistance()));
     	
     	SmartDashboard.putBoolean("clawHasBox", Robot.clawSubsystem.haveBox());
