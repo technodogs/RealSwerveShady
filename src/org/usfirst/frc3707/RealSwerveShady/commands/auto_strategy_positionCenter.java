@@ -48,19 +48,19 @@ public class auto_strategy_positionCenter extends CommandGroup {
 //        addSequential(new auto_choose_direction(),6);
 //        addSequential(new auto_claw_spitTimed(2));
         
-    	addParallel(new auto_lift_moveToMiddle(),3);
-    	addSequential(new auto_pathfinder("centerToRightSwitch"));
-    	addSequential(new auto_claw_spitTimed(1));
-    	
-    	addSequential(new auto_pathfinder("rightSwitchToCenterBox"));
-    	addParallel(new auto_lift_moveToLow(),0.7);
-    	
-    	addParallel(new auto_claw_suckTimed(2));
-    	addSequential(new auto_drive_timer(2, 0, 0.4));
-    	
-    	addParallel(new auto_lift_moveToMiddle(),3);
-    	addSequential(new auto_pathfinder("centerBoxTorightSwitch"));
-    	addSequential(new auto_claw_spitTimed(1));
+//    	addParallel(new auto_lift_moveToMiddle(),3);
+//    	addSequential(new auto_pathfinder("centerToRightSwitch"));
+//    	addSequential(new auto_claw_spitTimed(1));
+//    	
+//    	addSequential(new auto_pathfinder("rightSwitchToCenterBox"));
+//    	addParallel(new auto_lift_moveToLow(),0.7);
+//    	
+//    	addParallel(new auto_claw_suckTimed(2));
+//    	addSequential(new auto_drive_timer(2, 0, 0.4));
+//    	
+//    	addParallel(new auto_lift_moveToMiddle(),3);
+//    	addSequential(new auto_pathfinder("centerBoxTorightSwitch"));
+//    	addSequential(new auto_claw_spitTimed(1));
     	
     	
     	

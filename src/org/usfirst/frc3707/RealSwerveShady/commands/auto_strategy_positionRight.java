@@ -46,7 +46,10 @@ public class auto_strategy_positionRight extends CommandGroup {
     	
       
     	//addSequential(new auto_choose_scaleOrSwitch_right());
+    	addSequential(new dashboard_resetGyro());
     	addSequential(new auto_pathfinder("centerToRightSwitch"));
+//    	addSequential(new auto_drive_rotateToAngle(165));
+//    	addSequential(new auto_drive_timer(0.3, 0, 0.5));
  
     } 
 }

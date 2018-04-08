@@ -67,6 +67,7 @@ public class auto_drive_timer extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+    	Robot.driveSystem.driveSimple(0, 0);
 		Robot.driveSystem.disable();
     }
 
@@ -74,6 +75,6 @@ public class auto_drive_timer extends Command {
     // subsystems is scheduled to run
     @Override
     protected void interrupted() {
-		Robot.driveSystem.disable();
+    	end();
     }
 }

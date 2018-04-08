@@ -45,6 +45,7 @@ public class dashboard_resetGyro extends Command {
     @Override
     protected void execute() {
     	RobotMap.gyro.reset();
+    	Robot.driveSystem.resetEncoders();
     }
 
     // Make this return true when this Command no longer needs to run execute()

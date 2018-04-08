@@ -31,9 +31,12 @@ public class auto_pathfinder extends Command {
 	
 	private Notifier notifier;
 	private int currentSegment;
+
+	private double max_velocity = 10.5;
+	private double max_acceleration = 9;
 	
-	private double max_velocity = 11;
-	private double max_acceleration = 10;
+	private int ticksPerRev = 138;
+	private double wheelCirc = 1.0625;
 	
 	private double kv = 1.0/max_velocity;
 	
@@ -81,7 +84,22 @@ public class auto_pathfinder extends Command {
     	if(path == "centerToRightSwitch") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(13, 0, 0)
+                    new Waypoint(10, 0, 0)
+            };
+    	}
+    	else if(path == "leftToLeftScale") {
+    		points = new Waypoint[] {
+                    new Waypoint(0, 0, 0),
+                    new Waypoint(16, 0, Pathfinder.d2r(-10)),
+                    new Waypoint(20.5, -1, Pathfinder.d2r(-30))
+            };
+    	}
+    	else if(path == "leftToRightScale") {
+    		points = new Waypoint[] {
+                    new Waypoint(0, 0, 0),
+                    new Waypoint(16, 1.5, Pathfinder.d2r(-20)),
+                    new Waypoint(22, -3.5, Pathfinder.d2r(90)),
+                    new Waypoint(22, -13.6, Pathfinder.d2r(90))
             };
     	}
     	else if(path == "rightSwitchToCenterBox") {
@@ -123,15 +141,15 @@ public class auto_pathfinder extends Command {
         backLeft = new EncoderFollower(trajectory);
         backRight = new EncoderFollower(trajectory);
         
-        frontLeft.configureEncoder(0, 100, 1);
-        frontRight.configureEncoder(0, 100, 1);
-        backLeft.configureEncoder(0, 100, 1);
-        backRight.configureEncoder(0, 100, 1);
+        frontLeft.configureEncoder(0, ticksPerRev, wheelCirc);
+        frontRight.configureEncoder(0, ticksPerRev, wheelCirc);
+        backLeft.configureEncoder(0, ticksPerRev, wheelCirc);
+        backRight.configureEncoder(0, ticksPerRev, wheelCirc);
         
-        frontLeft.configurePIDVA(0.8, 0, 0, kv, 0);
-        frontRight.configurePIDVA(0.8, 0, 0, kv, 0);
-        backLeft.configurePIDVA(0.8, 0, 0, kv, 0);
-        backRight.configurePIDVA(0.8, 0, 0, kv, 0);
+        frontLeft.configurePIDVA(0, 0, 0, kv, 0);
+        frontRight.configurePIDVA(0, 0, 0, kv, 0);
+        backLeft.configurePIDVA(0, 0, 0, kv, 0);
+        backRight.configurePIDVA(0, 0, 0, kv, 0);
 
     	SmartDashboard.putNumber("segments", trajectory.segments.length);
     }

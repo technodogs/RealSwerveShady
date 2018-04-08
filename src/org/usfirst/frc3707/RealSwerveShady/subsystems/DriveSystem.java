@@ -82,10 +82,10 @@ public class DriveSystem extends Subsystem {
     public final ADXRS450_Gyro gyro = RobotMap.gyro;
     
       //PRACTICE ROBOT
-    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 333, frontLeftDistanceEncoder); //340Preferences.getInstance().getDouble("frontLeftOffset", -20)
-    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 161, frontRightDistanceEncoder); //341
-    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, 192, backLeftDistanceEncoder); //210
-    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 30, backRightDistanceEncoder); //12
+    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 331, frontLeftDistanceEncoder); //340Preferences.getInstance().getDouble("frontLeftOffset", -20)
+    SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 163, frontRightDistanceEncoder); //341
+    SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, 194, backLeftDistanceEncoder); //210
+    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 121, backRightDistanceEncoder); //12
    
     // COMP ROBOT
 //    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 201, frontLeftDistanceEncoder);
@@ -124,6 +124,7 @@ public class DriveSystem extends Subsystem {
     	SmartDashboard.putNumber("BR", backRightDistanceEncoder.getDistance());
     	SmartDashboard.putNumber("FL", frontLeftDistanceEncoder.getDistance());
     	SmartDashboard.putNumber("FR", frontRightDistanceEncoder.getDistance());
+    	//System.out.println(frontLeftDistanceEncoder.getDistance());
     }
     public void driveSimple(double speed, double angle) {
     		swerve.driveSimple(speed, angle);
