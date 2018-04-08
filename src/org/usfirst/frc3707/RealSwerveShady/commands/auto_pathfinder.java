@@ -84,14 +84,20 @@ public class auto_pathfinder extends Command {
     	if(path == "centerToRightSwitch") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(10, 0, 0)
+                    new Waypoint(10.3, -5, 0)
+            };
+    	}
+    	else if(path == "centerToLeftSwitch") {
+    		points = new Waypoint[] {
+                    new Waypoint(0, 0, 0),
+                    new Waypoint(10.3, 5.5, 0)
             };
     	}
     	else if(path == "leftToLeftScale") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
                     new Waypoint(16, 0, Pathfinder.d2r(-10)),
-                    new Waypoint(20.5, -1, Pathfinder.d2r(-30))
+                    new Waypoint(20.7, -1, Pathfinder.d2r(-30))
             };
     	}
     	else if(path == "leftToRightScale") {
@@ -99,20 +105,26 @@ public class auto_pathfinder extends Command {
                     new Waypoint(0, 0, 0),
                     new Waypoint(16, 1.5, Pathfinder.d2r(-20)),
                     new Waypoint(22, -3.5, Pathfinder.d2r(90)),
-                    new Waypoint(22, -13.6, Pathfinder.d2r(90))
+                    new Waypoint(22, -15.3, Pathfinder.d2r(90))
+            };
+    	}
+    	else if(path == "leftSwitchToCenterBox") {
+    		points = new Waypoint[] {
+                    new Waypoint(10.3, 5.5, 0),
+                    new Waypoint(2, 1.5, Pathfinder.d2r(50))
             };
     	}
     	else if(path == "rightSwitchToCenterBox") {
     		points = new Waypoint[] {
                     new Waypoint(10, -5, 0),
-                    new Waypoint(2, -2, Pathfinder.d2r(-50))
+                    new Waypoint(2, -1.5, Pathfinder.d2r(-50))
             };
     	}
     	else if(path == "centerBoxTorightSwitch") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, Pathfinder.d2r(-180)),
                     new Waypoint(-2, -4, Pathfinder.d2r(90)),
-                    new Waypoint(4, -8, 0)
+                    new Waypoint(4.5, -7, 0)
             };
     	}
     	

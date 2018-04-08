@@ -46,32 +46,45 @@ public class auto_strategy_positionLeft extends CommandGroup {
     	
     	
     	/**** LEFT TO LEFT SCALE ***/
-//    	addSequential(new dashboard_resetGyro());
-//    	addParallel(new auto_lift_moveToMiddle(),1.6);
-//    	addSequential(new auto_pathfinder("leftToLeftScale"));
-//    	addParallel(new auto_drive_timer(1.5, 0, 0.2));
-//    	addSequential(new auto_lift_moveToHigh(),2);
-//    	addSequential(new auto_claw_spitTimed(0.6));
-//    	addSequential(new auto_drive_timer(0.5, 0, -0.2), 0.5);
-//    	addSequential(new auto_lift_moveToLow());
-//    	addSequential(new auto_drive_rotateToAngle(160));
-//    	addSequential(new auto_drive_timer(0.5, 0, 0.2), 0.5);
+    	addSequential(new dashboard_resetGyro());
+    	addParallel(new auto_lift_moveToMiddle(),1.6);
+    	addSequential(new auto_pathfinder("leftToLeftScale"));
+    	addParallel(new auto_drive_timer(1.5, 0, 0.2));
+    	addSequential(new auto_lift_moveToHigh(),2);
+    	addSequential(new auto_claw_spitTimed(0.6));
+    	addSequential(new auto_drive_timer(0.5, 0, -0.2), 0.5);
+    	addParallel(new auto_lift_moveToLow(), 3);
+    	addSequential(new auto_drive_rotateToAngle(140));
+    	addParallel(new auto_claw_suckTimed(2));
+    	addSequential(new auto_drive_timer(2, 0, 0.4));
+    	addSequential(new auto_drive_timer(1, 0, -0.4));
+    	addParallel(new auto_lift_moveToHigh(),2.5);
+    	addSequential(new auto_drive_rotateToAngle(25));
+    	addSequential(new auto_drive_timer(1.5, 0, 0.3));
+    	addSequential(new auto_claw_spitTimed(0.6));
+    	addParallel(new auto_lift_moveToLow(), 3);
+    	addSequential(new auto_drive_timer(0.5, 0, -0.2), 0.5);
     	
     	
     	
     	/*** LEFT TO RIGHT SCALE ***/
-    	addSequential(new dashboard_resetGyro());
-    	addParallel(new auto_lift_moveToMiddle(),1.6);
-    	addSequential(new auto_pathfinder("leftToRightScale"));
-    	addSequential(new auto_drive_rotateToAngle(345), 0.5);
-    	addParallel(new auto_drive_timer(2, 0, 0.3));
-    	addSequential(new auto_lift_moveToHigh(),2);
-    	addSequential(new auto_claw_spitTimed(0.6));
-    	addSequential(new auto_drive_timer(2, 0, -0.2));
-    	addParallel(new auto_lift_moveToLow());
-    	addSequential(new auto_drive_rotateToAngle(170));
-    	addParallel(new auto_claw_suckTimed(2));
-    	addSequential(new auto_drive_timer(2, 0, 0.4));
+//    	addSequential(new dashboard_resetGyro());
+//    	addParallel(new auto_lift_moveToMiddle(),1.6);
+//    	addSequential(new auto_pathfinder("leftToRightScale"));
+//    	addSequential(new auto_drive_rotateToAngle(345), 0.5);
+//    	addParallel(new auto_drive_timer(2, 0, 0.3));
+//    	addSequential(new auto_lift_moveToHigh(),2);
+//    	addSequential(new auto_claw_spitTimed(0.6));
+//    	addSequential(new auto_drive_timer(2, 0, -0.2));
+//    	addParallel(new auto_lift_moveToLow());
+//    	addSequential(new auto_drive_rotateToAngle(170));
+//    	addParallel(new auto_claw_suckTimed(1.6));
+//    	addSequential(new auto_drive_timer(1.6, 0, 0.4));
+//    	addSequential(new auto_drive_timer(1, 0, -0.4));
+//    	addParallel(new auto_lift_moveToHigh(),3);
+//    	addSequential(new auto_drive_rotateToAngle(345));
+//    	addSequential(new auto_drive_timer(1.5, 0, 0.3));
+//    	addSequential(new auto_claw_spitTimed(0.6));
     	
     	
  

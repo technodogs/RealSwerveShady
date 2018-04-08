@@ -85,7 +85,7 @@ public class DriveSystem extends Subsystem {
     SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 331, frontLeftDistanceEncoder); //340Preferences.getInstance().getDouble("frontLeftOffset", -20)
     SwerveWheel frontRightWheel = new SwerveWheel(frontRightTwist, frontRightDrive, 163, frontRightDistanceEncoder); //341
     SwerveWheel backLeftWheel = new SwerveWheel(backLeftTwist, backLeftDrive, 194, backLeftDistanceEncoder); //210
-    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 121, backRightDistanceEncoder); //12
+    SwerveWheel backRightWheel = new SwerveWheel(backRightTwist, backRightDrive, 112, backRightDistanceEncoder); //12
    
     // COMP ROBOT
 //    SwerveWheel frontLeftWheel = new SwerveWheel(frontLeftTwist, frontLeftDrive, 201, frontLeftDistanceEncoder);
