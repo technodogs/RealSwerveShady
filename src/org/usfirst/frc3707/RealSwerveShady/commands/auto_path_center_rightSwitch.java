@@ -56,8 +56,8 @@ public class auto_path_center_rightSwitch extends CommandGroup {
     	addSequential(new auto_pathfinder("rightSwitchToCenterBox"));
     	addParallel(new auto_lift_moveToLow(),0.9);
     	
-    	addSequential(new auto_drive_rotateToAngle(356));
-    	addParallel(new auto_claw_suckTimed(2));
+    	addSequential(new auto_drive_rotateToAngle(356),0.1);
+    	addParallel(new auto_claw_suckTimed(1.6));
     	addSequential(new auto_drive_timer(2, 0, 0.4));
     	
     	addParallel(new auto_lift_moveToMiddle(),3);

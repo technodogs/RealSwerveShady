@@ -113,13 +113,13 @@ public class auto_pathfinder extends Command {
     	else if(path == "leftSwitchToCenterBox") {
     		points = new Waypoint[] {
                     new Waypoint(10.3, 5.5, 0),
-                    new Waypoint(2, 20.5, Pathfinder.d2r(50))
+                    new Waypoint(2, 2.5, Pathfinder.d2r(50))
             };
     	}
     	else if(path == "rightSwitchToCenterBox") {
     		points = new Waypoint[] {
                     new Waypoint(10, -5, 0),
-                    new Waypoint(2, -1.5, Pathfinder.d2r(-50))
+                    new Waypoint(2, -1.1, Pathfinder.d2r(-50))
             };
     	}
     	else if(path == "centerBoxTorightSwitch") {
