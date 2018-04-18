@@ -22,6 +22,8 @@ import jaci.pathfinder.followers.EncoderFollower;
 import jaci.pathfinder.modifiers.SwerveModifier;
 import jaci.pathfinder.modifiers.TankModifier;
 
+import java.io.File;
+
 import org.usfirst.frc3707.RealSwerveShady.Robot;
 
 /**
@@ -104,14 +106,14 @@ public class auto_pathfinder extends Command {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
                     new Waypoint(16, 1.5, Pathfinder.d2r(-20)),
-                    new Waypoint(22, -3.5, Pathfinder.d2r(90)),
-                    new Waypoint(22, -15.3, Pathfinder.d2r(90))
+                    new Waypoint(20.5, -3.5, Pathfinder.d2r(90)),
+                    new Waypoint(20.5, -17, Pathfinder.d2r(90))
             };
     	}
     	else if(path == "leftSwitchToCenterBox") {
     		points = new Waypoint[] {
                     new Waypoint(10.3, 5.5, 0),
-                    new Waypoint(2, 1.5, Pathfinder.d2r(50))
+                    new Waypoint(2, 20.5, Pathfinder.d2r(50))
             };
     	}
     	else if(path == "rightSwitchToCenterBox") {
@@ -127,11 +129,34 @@ public class auto_pathfinder extends Command {
                     new Waypoint(4.5, -7, 0)
             };
     	}
+    	else if(path == "centerBoxToLeftSwitch") {
+    		points = new Waypoint[] {
+                    new Waypoint(0, 0, Pathfinder.d2r(-180)),
+                    new Waypoint(-2, 4, Pathfinder.d2r(90)),
+                    new Waypoint(4.5, 7, 0)
+            };
+    	}
     	
     	Trajectory trajectory = null;
     	
     	try {
-    		trajectory = Pathfinder.generate(points, config);
+    		String filePath = "/home/lvuser/" + path + ".csv";
+    		System.out.println("PATH FILE '" + filePath + "'");
+    		File trajFile = new File(filePath);
+    		
+    		if(trajFile.exists()) {
+    			trajectory = Pathfinder.readFromCSV(trajFile);
+    		}
+    		else {
+    			trajectory = Pathfinder.generate(points, config);
+    		}
+    		
+    		//COMMENT THIS OUT TO SET THE FILES
+//    		trajectory = Pathfinder.generate(points, config);
+//    		if(!trajFile.exists()) {
+//    			trajFile.createNewFile();
+//    		}
+//    		Pathfinder.writeToCSV(trajFile, trajectory);
     	}
     	catch(Exception e) {
     		System.out.println(e);
@@ -175,7 +200,7 @@ public class auto_pathfinder extends Command {
     	frontRight.reset();
     	backLeft.reset();
     	backRight.reset();
-    	Robot.driveSystem.resetEncoders();
+    	//Robot.driveSystem.resetEncoders();
     	notifier.startPeriodic(frontLeft.getSegment().dt);
     }
 
@@ -217,8 +242,8 @@ public class auto_pathfinder extends Command {
     }
     
     private void followPath() {
-    	SmartDashboard.putNumber("PathTime", Timer.getFPGATimestamp());
-    	SmartDashboard.putNumber("currentSegment", currentSegment);
+    	//SmartDashboard.putNumber("PathTime", Timer.getFPGATimestamp());
+    	//SmartDashboard.putNumber("currentSegment", currentSegment);
     	
     	if(!frontRight.isFinished()) {
     		
@@ -227,8 +252,8 @@ public class auto_pathfinder extends Command {
 //	    	        seg.dt, seg.x, seg.y, seg.position, seg.velocity, 
 //	    	            seg.acceleration, seg.jerk, seg.heading);
     		
-    		SmartDashboard.putNumber("FL_POSITION", frontLeft.getSegment().position);
-    		Robot.driveSystem.displayEncoders();
+    		//SmartDashboard.putNumber("FL_POSITION", frontLeft.getSegment().position);
+    		//Robot.driveSystem.displayEncoders();
 	    	
 	    	Robot.driveSystem.swerve.driveDirect(frontRight,frontLeft,backLeft,backRight);
 	    	

@@ -15,18 +15,16 @@ import jaci.pathfinder.followers.EncoderFollower;
 public class SwerveWheel {
     private PIDController rotation;
     private SpeedController speed;
-    private final Encoder encoder;
     private double offset;
     private double kv = 1.0/10.5;
     
 
 	double last_error = 0.0;
 
-    public SwerveWheel(PIDController rotation, SpeedController speed, double offset, Encoder encoder){
+    public SwerveWheel(PIDController rotation, SpeedController speed, double offset){
         this.rotation  = rotation;
         this.speed = speed;
         this.offset = offset;
-        this.encoder = encoder;
     }
     
     public void drive(double newSpeed, double newAngle) {
@@ -40,15 +38,16 @@ public class SwerveWheel {
 
 	    	Trajectory.Segment seg = follower.getSegment();
 	    	double fakeDistance = seg.position;
-	    	double speedx = follower.calculate((int) encoder.getDistance());
-	    	calculate((int) encoder.getDistance(), follower);
+	    	//double speedx = follower.calculate((int) encoder.getDistance());
+	    	double speedx = follower.calculate((int)fakeDistance);
+	    	//calculate((int) encoder.getDistance(), follower);
 	    	
-	    	int encD = (int) encoder.getDistance();
+	    	//int encD = (int) encoder.getDistance();
 	    	//double dis = ((double) encD / 100) * 1; 
-	    	double dis = (double)encD;
-	    	double err = fakeDistance - dis;
+	    	//double dis = (double)encD;
+	    	//double err = fakeDistance - dis;
 	    	
-	    	double speed = kv * seg.velocity;
+	    	//double speed = kv * seg.velocity;
 	    	double heading = follower.getHeading();
 	        
 	    	//System.out.printf("%f\t%f\t%f\t%f\t%f\n", 
