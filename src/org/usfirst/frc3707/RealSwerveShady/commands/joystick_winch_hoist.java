@@ -47,9 +47,9 @@ public class joystick_winch_hoist extends Command {
 	    	if  (Robot.oi.joystick1.getRawAxis(5) < 0.2) {
 	    		Robot.winchSubsystem.stopWinch();
 	    	}
-	    	else {
+	    	else if(Robot.oi.joystick1.getRawButton(5)) {
 	    		Robot.winchSubsystem.hoist(Robot.oi.joystick1.getRawAxis(5));
-	    }
+	    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
