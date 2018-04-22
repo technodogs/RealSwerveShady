@@ -49,23 +49,24 @@ public class auto_path_center_leftSwitch extends CommandGroup {
         
     	addParallel(new auto_lift_moveToMiddle(),3);
     	addParallel(new auto_pathfinder("centerToLeftSwitch"));
-    	addSequential(new auto_delay(2.5));
+    	addSequential(new auto_delay(2.2));
     	addParallel(new auto_claw_spitTimed(0.3));
 
     	addSequential(new auto_pathfinder("leftSwitchToCenterBox"));
     	addParallel(new auto_lift_moveToLow(),0.9);
     	
-    	addSequential(new auto_drive_rotateToAngle(356), 0.1);
-    	addParallel(new auto_claw_suckTimed(1.6));
-    	addSequential(new auto_drive_timer(2, 0, 0.4));
+    	addSequential(new auto_drive_rotateToAngle(40),1);
+    	addParallel(new auto_claw_suckTimed(2.2));
+    	addSequential(new auto_drive_timer(2.2, 346, 0.3));
     	
     	addParallel(new auto_lift_moveToMiddle(),3);
     	addParallel(new auto_pathfinder("centerBoxToLeftSwitch"));
     	addSequential(new auto_delay(2.3));
+    	addSequential(new auto_drive_rotateToAngle(355),0.5);
     	addSequential(new auto_claw_spitTimed(0.3));
     	
     	addSequential(new auto_pathfinder("leftSwitchToCenterBox"));
-    	addParallel(new auto_lift_moveToLow(),0.7);
+    	addParallel(new auto_lift_moveToLow(),1);
     	
     	
     	

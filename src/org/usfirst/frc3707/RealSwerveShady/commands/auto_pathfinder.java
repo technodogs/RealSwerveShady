@@ -69,6 +69,7 @@ public class auto_pathfinder extends Command {
     	
     	Waypoint[] points = new Waypoint[] {
                 new Waypoint(0, 0, 0),
+                new Waypoint(1, 0, 0)
 //                new Waypoint(-12, 0, 0),
 //                new Waypoint(-14, -2, Pathfinder.d2r(45)),
 //                new Waypoint(-14, -14, Pathfinder.d2r(90))
@@ -86,20 +87,20 @@ public class auto_pathfinder extends Command {
     	if(path == "centerToRightSwitch") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(10.3, -5, 0)
+                    new Waypoint(11.5, -5, 0)
             };
     	}
     	else if(path == "centerToLeftSwitch") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(10.3, 5.5, 0)
+                    new Waypoint(11, 6.5, 0)
             };
     	}
     	else if(path == "leftToLeftScale") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(16, 0, Pathfinder.d2r(-10)),
-                    new Waypoint(20.7, -1, Pathfinder.d2r(-30))
+                    new Waypoint(18, 0, Pathfinder.d2r(-10)),
+                    new Waypoint(21.5, -1, Pathfinder.d2r(-30))
             };
     	}
     	else if(path == "leftToRightScale") {
@@ -112,21 +113,21 @@ public class auto_pathfinder extends Command {
     	}
     	else if(path == "leftSwitchToCenterBox") {
     		points = new Waypoint[] {
-                    new Waypoint(10.3, 5.5, 0),
-                    new Waypoint(2, 2.5, Pathfinder.d2r(50))
+                    new Waypoint(11, 6, 0),
+                    new Waypoint(4.5, 4, Pathfinder.d2r(50))
             };
     	}
     	else if(path == "rightSwitchToCenterBox") {
     		points = new Waypoint[] {
-                    new Waypoint(10, -5, 0),
-                    new Waypoint(2, -1.1, Pathfinder.d2r(-50))
+                    new Waypoint(11, -5, 0),
+                    new Waypoint(3.5, -3, Pathfinder.d2r(-50))
             };
     	}
     	else if(path == "centerBoxTorightSwitch") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, Pathfinder.d2r(-180)),
                     new Waypoint(-2, -4, Pathfinder.d2r(90)),
-                    new Waypoint(4.5, -7, 0)
+                    new Waypoint(3.5, -6.5, 0)
             };
     	}
     	else if(path == "centerBoxToLeftSwitch") {

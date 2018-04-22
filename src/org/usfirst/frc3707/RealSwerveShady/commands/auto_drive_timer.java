@@ -55,7 +55,7 @@ public class auto_drive_timer extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-		Robot.driveSystem.driveSimple(m_speed, m_direction);
+    		Robot.driveSystem.driveSimple(m_speed, m_direction);
     }
 
     // Make this return true when this Command no longer needs to run execute()

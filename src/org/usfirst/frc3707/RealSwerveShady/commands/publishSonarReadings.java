@@ -55,6 +55,8 @@ public class publishSonarReadings extends Command {
 //    	SmartDashboard.putNumber("Left Side Aft Detect", Math.round(RobotMap.leftSideAftSonar.getDistance()));
     	SmartDashboard.putNumber("lidar", Math.round(RobotMap.lidar.getDistance()));
     	
+    	Robot.driveSystem.publishCanDashboard();
+    	
     	SmartDashboard.putBoolean("clawHasBox", Robot.clawSubsystem.haveBox());
     	SmartDashboard.putBoolean("floorIsWhite", RobotMap.senorsSubsystemfloorReader.get());
     	if(Robot.clawSubsystem.haveBox()) {
