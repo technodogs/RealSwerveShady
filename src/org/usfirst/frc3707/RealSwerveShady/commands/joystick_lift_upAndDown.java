@@ -47,7 +47,12 @@ public class joystick_lift_upAndDown extends Command {
 	    		Robot.clawLiftSubsystem.stopClawLift();
 	    	}
 	    	else {
-	    		Robot.clawLiftSubsystem.upDown(Robot.oi.joystick1.getRawAxis(1));
+	    		if(Robot.oi.joystick1.getRawButton(10)) {
+	    			Robot.clawLiftSubsystem.upDown(Robot.oi.joystick1.getRawAxis(1) * 0.5);
+	    		}
+	    		else {
+	    			Robot.clawLiftSubsystem.upDown(Robot.oi.joystick1.getRawAxis(1));
+	    		}
 	    	}
     }
 

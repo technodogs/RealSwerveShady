@@ -243,7 +243,6 @@ public class auto_pathfinder extends Command {
     
     private void followPath() {
     	//SmartDashboard.putNumber("PathTime", Timer.getFPGATimestamp());
-    	//SmartDashboard.putNumber("currentSegment", currentSegment);
     	
     	if(!frontRight.isFinished()) {
     		
@@ -254,10 +253,16 @@ public class auto_pathfinder extends Command {
     		
     		//SmartDashboard.putNumber("FL_POSITION", frontLeft.getSegment().position);
     		//Robot.driveSystem.displayEncoders();
+
+    	   /* 	Trajectory.Segment seg = frontRight.getSegment();
+    	    	double fakeDistance = seg.position;
+    	    	double speedx = frontRight.calculate((int)fakeDistance);
+    	    	double heading = frontRight.getHeading();
+    	    	
+    	    	Robot.driveSystem.drive(directionX, directionY, 0, true, false);*/
+    		
+	    Robot.driveSystem.swerve.driveDirect(frontRight,frontLeft,backLeft,backRight);
 	    	
-	    	Robot.driveSystem.swerve.driveDirect(frontRight,frontLeft,backLeft,backRight);
-	    	
-	    	currentSegment++;
     	}
     	
     }

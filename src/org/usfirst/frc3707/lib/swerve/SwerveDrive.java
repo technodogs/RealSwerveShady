@@ -113,6 +113,12 @@ public class SwerveDrive implements PIDOutput {
 //            frontRightAngle += gyroAngle;
 //            frontLeftAngle += gyroAngle;
 //        }
+		if(useGyro) {
+			frontRightAngle = Math.IEEEremainder(frontRightAngle + 180, 360);
+			frontLeftAngle = Math.IEEEremainder(frontLeftAngle + 180, 360);
+			backLeftAngle = Math.IEEEremainder(backLeftAngle + 180, 360);
+			backRightAngle = Math.IEEEremainder(backRightAngle + 180, 360);
+		}
         if(slowSpeed) {
 		    	backRightSpeed *= 0.5;
 		    	backLeftSpeed *= 0.5;
