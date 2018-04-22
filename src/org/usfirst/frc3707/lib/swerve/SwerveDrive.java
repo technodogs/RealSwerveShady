@@ -132,13 +132,19 @@ public class SwerveDrive implements PIDOutput {
 		this.leftBackWheel.drive(backLeftSpeed, backLeftAngle);
 		this.rightBackWheel.drive(backRightSpeed, backRightAngle);
     }
+    public void lockStop() {
+    		this.rightFrontWheel.drive(0, 315);
+		this.leftFrontWheel.drive(0, 45);
+		this.leftBackWheel.drive(0, 315);
+		this.rightBackWheel.drive(0, 45);
+    }
     public void driveSimple(double speed, double angle) {
     	//reverse it because encoders think 0 is backwards
 //    	angle = reverseAngle(angle);
 //    	double gyroAngle = normalizeGyroAngle(RobotMap.gyro.getAngle()); 
 //    	angle = normalizeGyroAngle(angle + gyroAngle);
     	
-    	this.rightFrontWheel.drive(speed, angle);
+    	    this.rightFrontWheel.drive(speed, angle);
 		this.leftFrontWheel.drive(speed, angle);
 		this.leftBackWheel.drive(speed, angle);
 		this.rightBackWheel.drive(speed, angle);

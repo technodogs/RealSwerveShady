@@ -45,7 +45,7 @@ public class auto_claw_spitTimed extends TimedCommand {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    		Robot.clawSubsystem.spit(0.61);
+    		Robot.clawSubsystem.spit(0.5);
     }
 
 

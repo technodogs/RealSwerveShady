@@ -106,6 +106,15 @@ public class DriveSystem extends Subsystem {
 	    	SmartDashboard.putData(gyro);
 	    	//displayEncoders();
     }
+    
+    public void publishCanDashboard() {
+    		SmartDashboard.putNumber("frontRight_SwerveID", frontRightSwerve.getDeviceID());
+    		SmartDashboard.putNumber("frontLeft_SwerveID", frontLeftSwerve.getDeviceID());
+    		SmartDashboard.putNumber("backRight_SwerveID", backRightSwerve.getDeviceID());
+    		SmartDashboard.putNumber("backLeft_SwerveID", backLeftSwerve.getDeviceID());
+    		
+    		
+    }
 
 //    public void resetEncoders() {
 //	    	backLeftDistanceEncoder.reset();
@@ -122,6 +131,10 @@ public class DriveSystem extends Subsystem {
 //    }
     public void driveSimple(double speed, double angle) {
     		swerve.driveSimple(speed, angle);
+    }
+    
+    public void lockStop() {
+    		swerve.lockStop();
     }
 
     @Override
