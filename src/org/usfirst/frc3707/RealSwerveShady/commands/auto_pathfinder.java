@@ -120,7 +120,7 @@ public class auto_pathfinder extends Command {
     	else if(path == "rightSwitchToCenterBox") {
     		points = new Waypoint[] {
                     new Waypoint(11, -5, 0),
-                    new Waypoint(3.5, -3, Pathfinder.d2r(-50))
+                    new Waypoint(4.5, -3, Pathfinder.d2r(-50))
             };
     	}
     	else if(path == "centerBoxTorightSwitch") {
@@ -145,19 +145,19 @@ public class auto_pathfinder extends Command {
     		System.out.println("PATH FILE '" + filePath + "'");
     		File trajFile = new File(filePath);
     		
-    		if(trajFile.exists()) {
-    			trajectory = Pathfinder.readFromCSV(trajFile);
-    		}
-    		else {
-    			trajectory = Pathfinder.generate(points, config);
-    		}
+//    		if(trajFile.exists()) {
+//    			trajectory = Pathfinder.readFromCSV(trajFile);
+//    		}
+//    		else {
+//    			trajectory = Pathfinder.generate(points, config);
+//    		}
     		
     		//COMMENT THIS OUT TO SET THE FILES
-//    		trajectory = Pathfinder.generate(points, config);
-//    		if(!trajFile.exists()) {
-//    			trajFile.createNewFile();
-//    		}
-//    		Pathfinder.writeToCSV(trajFile, trajectory);
+    		trajectory = Pathfinder.generate(points, config);
+    		if(!trajFile.exists()) {
+    			trajFile.createNewFile();
+    		}
+    		Pathfinder.writeToCSV(trajFile, trajectory);
     	}
     	catch(Exception e) {
     		System.out.println(e);

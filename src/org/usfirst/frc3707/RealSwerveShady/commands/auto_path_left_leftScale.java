@@ -46,9 +46,9 @@ public class auto_path_left_leftScale extends CommandGroup {
     	
     	/**** LEFT TO LEFT SCALE ***/
     	addSequential(new dashboard_resetGyro());
-    	addSequential(new auto_lift_moveToMiddle(),0.2);
+    	addSequential(new auto_lift_moveToMiddle(),0.1);
     	addSequential(new auto_lift_moveToLow(),0.2);
-    	addSequential(new auto_delay(0.2));
+    	addSequential(new auto_delay(0.1));
     	addParallel(new auto_lift_moveToMiddle(),1.6);
     	addSequential(new auto_pathfinder("leftToLeftScale"));
     	
