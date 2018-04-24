@@ -83,7 +83,6 @@ public class OI {
 
         // SmartDashboard Buttons
         SmartDashboard.putData("publishSonarReadings", new publishSonarReadings());
-        SmartDashboard.putData("auto_strategy_positionCenter", new auto_strategy_positionCenter());
         SmartDashboard.putData("dashboard_resetGyro", new dashboard_resetGyro());
         SmartDashboard.putData("dashboard_readSwerveEncoders", new dashboard_readSwerveEncoders());
         SmartDashboard.putData("dashboard_useVision", new dashboard_useVision());

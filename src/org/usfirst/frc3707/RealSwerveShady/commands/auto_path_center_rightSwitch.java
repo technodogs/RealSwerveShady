@@ -46,21 +46,8 @@ public class auto_path_center_rightSwitch extends CommandGroup {
     	
     	/***** RIGHT SWITCH DOUBLE CUBE ****/
     	
-    	addSequential(new dashboard_resetGyro());
-        
-    	addParallel(new auto_lift_moveToMiddle(),3);
-    	addParallel(new auto_pathfinder("centerToRightSwitch"));
-    	addSequential(new auto_delay(2.2));
-    	addParallel(new auto_claw_spitTimed(0.3));
-
-    	addSequential(new auto_pathfinder("rightSwitchToCenterBox"));
-    	addParallel(new auto_lift_moveToLow(),0.9);
-    	
-    	addSequential(new auto_drive_rotateToAngle(320),1);
-    	addParallel(new auto_claw_suckTimed(2.4));
-    	addSequential(new auto_drive_timer(2.4, 17, 0.3));
-    	
-    	addParallel(new auto_lift_moveToMiddle(),3);
+    addSequential(new auto_path_center_rightSwitchUpToBoxGet());
+    
     	addParallel(new auto_pathfinder("centerBoxTorightSwitch"));
     	addSequential(new auto_delay(2.3));
     	addSequential(new auto_drive_rotateToAngle(0),0.5);
