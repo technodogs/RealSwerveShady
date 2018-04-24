@@ -47,6 +47,7 @@ public class auto_path_center_rightSwitch extends CommandGroup {
     	/***** RIGHT SWITCH DOUBLE CUBE ****/
     	
     addSequential(new auto_path_center_rightSwitchUpToBoxGet());
+    addSequential(new auto_path_center_rightSwitchBoxGet());
     
     	addParallel(new auto_pathfinder("centerBoxTorightSwitch"));
     	addSequential(new auto_delay(2.3));

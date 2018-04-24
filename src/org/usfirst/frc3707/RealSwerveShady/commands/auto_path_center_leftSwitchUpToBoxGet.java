@@ -52,12 +52,6 @@ public class auto_path_center_leftSwitchUpToBoxGet extends CommandGroup {
 
     	addSequential(new auto_pathfinder("leftSwitchToCenterBox"));
     	addParallel(new auto_lift_moveToLow(),0.9);
-    	
-    	addSequential(new auto_drive_rotateToAngle(40),1);
-    	addParallel(new auto_claw_suckTimed(2.2));
-    	addSequential(new auto_drive_timer(2.2, 346, 0.3));
-    	
-    	addParallel(new auto_lift_moveToMiddle(),3);
  
     } 
 }

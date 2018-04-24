@@ -108,12 +108,10 @@ public class DriveSystem extends Subsystem {
     }
     
     public void publishCanDashboard() {
-    		SmartDashboard.putNumber("frontRight_SwerveID", frontRightSwerve.getDeviceID());
-    		SmartDashboard.putNumber("frontLeft_SwerveID", frontLeftSwerve.getDeviceID());
-    		SmartDashboard.putNumber("backRight_SwerveID", backRightSwerve.getDeviceID());
-    		SmartDashboard.putNumber("backLeft_SwerveID", backLeftSwerve.getDeviceID());
-    		
-    		
+    		SmartDashboard.putBoolean("frontRight_SwerveID", frontRightSwerve.isAlive());
+    		SmartDashboard.putBoolean("frontLeft_SwerveID", frontLeftSwerve.isAlive());
+    		SmartDashboard.putBoolean("backRight_SwerveID", backRightSwerve.isAlive());
+    		SmartDashboard.putBoolean("backLeft_SwerveID", backLeftSwerve.isAlive());	
     }
 
 //    public void resetEncoders() {

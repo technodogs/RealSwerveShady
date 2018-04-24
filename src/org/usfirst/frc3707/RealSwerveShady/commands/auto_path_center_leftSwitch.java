@@ -46,6 +46,7 @@ public class auto_path_center_leftSwitch extends CommandGroup {
     	
     	/*** LEFT SWITCH **/
     	addSequential(new auto_path_center_leftSwitchUpToBoxGet());
+    	addSequential(new auto_path_center_leftSwitchBoxGet());
     	
     	addParallel(new auto_pathfinder("centerBoxToLeftSwitch"));
     	addSequential(new auto_delay(2.3));
