@@ -87,28 +87,28 @@ public class auto_pathfinder extends Command {
     	if(path == "centerToRightSwitch") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(11.5, -5, 0)
+                    new Waypoint(10.7, -5, 0)
             };
     	}
     	else if(path == "centerToLeftSwitch") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(11, 6.5, 0)
+                    new Waypoint(10.5, 6.5, 0)
             };
     	}
     	else if(path == "leftToLeftScale") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
                     new Waypoint(18, 0, Pathfinder.d2r(-10)),
-                    new Waypoint(21.5, -1, Pathfinder.d2r(-30))
+                    new Waypoint(21, -1, Pathfinder.d2r(-30))
             };
     	}
     	else if(path == "leftToRightScale") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(16, 1.5, Pathfinder.d2r(-20)),
-                    new Waypoint(20.5, -3.5, Pathfinder.d2r(90)),
-                    new Waypoint(20.5, -17, Pathfinder.d2r(90))
+                    new Waypoint(17, 1.5, Pathfinder.d2r(-20)),
+                    new Waypoint(21.5, -3.5, Pathfinder.d2r(90)),
+                    new Waypoint(21.5, -15, Pathfinder.d2r(90))
             };
     	}
     	else if(path == "leftSwitchToCenterBox") {
@@ -142,7 +142,7 @@ public class auto_pathfinder extends Command {
                     new Waypoint(0, 0, Pathfinder.d2r(90)),
                     new Waypoint(0, 12, Pathfinder.d2r(45)),
                     new Waypoint(3, 13, Pathfinder.d2r(30)),
-                    new Waypoint(17, 15, 0)
+                    new Waypoint(16, 14, 0)
             };
     	}
     	else if(path == "centerBoxToLeftDefense") {
@@ -158,7 +158,7 @@ public class auto_pathfinder extends Command {
                     new Waypoint(0, 0, Pathfinder.d2r(90)),
                     new Waypoint(0, 12, Pathfinder.d2r(45)),
                     new Waypoint(3, 13, Pathfinder.d2r(30)),
-                    new Waypoint(18, 14, 0)
+                    new Waypoint(17, 13.5, 0)
             };
     	}
     	else if(path == "right_centerBoxToLeftDefense") {
@@ -180,19 +180,19 @@ public class auto_pathfinder extends Command {
     		System.out.println("PATH FILE '" + filePath + "'");
     		File trajFile = new File(filePath);
     		
-//    		if(trajFile.exists()) {
-//    			trajectory = Pathfinder.readFromCSV(trajFile);
-//    		}
-//    		else {
-//    			trajectory = Pathfinder.generate(points, config);
-//    		}
+    		if(trajFile.exists()) {
+    			trajectory = Pathfinder.readFromCSV(trajFile);
+    		}
+    		else {
+    			trajectory = Pathfinder.generate(points, config);
+    		}
     		
     		//COMMENT THIS OUT TO SET THE FILES
-    		trajectory = Pathfinder.generate(points, config);
-    		if(!trajFile.exists()) {
-    			trajFile.createNewFile();
-    		}
-    		Pathfinder.writeToCSV(trajFile, trajectory);
+//    		trajectory = Pathfinder.generate(points, config);
+//    		if(!trajFile.exists()) {
+//    			trajFile.createNewFile();
+//    		}
+//    		Pathfinder.writeToCSV(trajFile, trajectory);
     	}
     	catch(Exception e) {
     		System.out.println(e);

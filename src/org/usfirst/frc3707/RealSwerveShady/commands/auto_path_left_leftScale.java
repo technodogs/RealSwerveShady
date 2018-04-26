@@ -48,20 +48,20 @@ public class auto_path_left_leftScale extends CommandGroup {
     
     	addSequential(new auto_path_left_leftScaleUpToFirstBox());
     	
-    	addParallel(new auto_lift_moveToLow(), 2.1);
-    	addSequential(new auto_drive_rotateToAngle(150), 1.5);
+    	addParallel(new auto_lift_moveToLow(), 2.4);
+    	addSequential(new auto_drive_rotateToAngle(165), 1.8);
     	
     	addParallel(new auto_claw_suckTimed(1.7));
     	addSequential(new auto_drive_timer(1.7, 0, 0.4));
     	addSequential(new auto_drive_timer(1, 0, -0.4));
     	
     	addParallel(new auto_lift_moveToHigh(),3);
-    	addSequential(new auto_drive_rotateToAngle(10), 1.9);
+    	addSequential(new auto_drive_rotateToAngle(20), 1.7);
     	addSequential(new auto_drive_timer(1.5, 0, 0.3));
     	addSequential(new auto_claw_spitTimed(0.6));
     	
-    	addSequential(new auto_drive_timer(0.5, 0, -0.2), 0.5);
-    	addParallel(new auto_lift_moveToLow(), 2);
+    	addSequential(new auto_drive_timer(0.5, 0, -0.3), 0.5);
+    	addParallel(new auto_lift_moveToLow(), 2.4);
     	
     	
     	

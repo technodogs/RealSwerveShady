@@ -53,7 +53,7 @@ public class auto_path_left_leftScaleUpToFirstBox extends CommandGroup {
     	
     	addSequential(new auto_drive_rotateToAngle(30), 0.5);
     	addParallel(new auto_drive_timer(1.5, 0, 0.25));
-    	addSequential(new auto_lift_moveToHigh(),2);
+    	addSequential(new auto_lift_moveToHigh(),1.7);
     	addSequential(new auto_claw_spitTimed(0.6));
     	addSequential(new auto_drive_timer(0.5, 0, -0.2), 0.5);
  
