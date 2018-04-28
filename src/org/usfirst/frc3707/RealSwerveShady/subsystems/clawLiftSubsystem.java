@@ -55,7 +55,7 @@ public class clawLiftSubsystem extends Subsystem {
     	clawLiftMotor.set(upDownPower);
     }
     public void stopClawLift() {
-    	clawLiftMotor.set(0.17);
+    	clawLiftMotor.set(0.12);
     }
     public boolean liftLowPos () {
     	return !liftLow.get();

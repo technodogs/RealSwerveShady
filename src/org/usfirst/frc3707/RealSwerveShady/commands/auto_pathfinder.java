@@ -106,9 +106,9 @@ public class auto_pathfinder extends Command {
     	else if(path == "leftToRightScale") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
-                    new Waypoint(17, 1.5, Pathfinder.d2r(-20)),
-                    new Waypoint(21.5, -3.5, Pathfinder.d2r(90)),
-                    new Waypoint(21.5, -15, Pathfinder.d2r(90))
+                    new Waypoint(18, 1.5, Pathfinder.d2r(-20)),
+                    new Waypoint(22, -3.5, Pathfinder.d2r(90)),
+                    new Waypoint(22, -15, Pathfinder.d2r(90))
             };
     	}
     	else if(path == "leftSwitchToCenterBox") {

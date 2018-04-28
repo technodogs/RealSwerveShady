@@ -48,6 +48,9 @@ public class auto_strategy_positionRight extends CommandGroup {
     	//addSequential(new auto_choose_scaleOrSwitch_right());
     	//addSequential(new auto_path_flickDownBox());
     	
+
+    	//addParallel(new auto_lift_moveToLow(),1.0);
+    	
     	addSequential(new dashboard_resetGyro());
     	addSequential(new auto_path_crossLine());
     	
