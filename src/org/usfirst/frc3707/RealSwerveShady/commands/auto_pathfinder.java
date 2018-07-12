@@ -96,6 +96,13 @@ public class auto_pathfinder extends Command {
                     new Waypoint(10.5, 6.5, 0)
             };
     	}
+    	else if(path == "leftToLeftScaleSIDE") {
+    		points = new Waypoint[] {
+                    new Waypoint(0, 0, 0),
+                    new Waypoint(16, 0, Pathfinder.d2r(-10)),
+                    new Waypoint(27.2, 0.8, Pathfinder.d2r(-30))
+            };
+    	}
     	else if(path == "leftToLeftScale") {
     		points = new Waypoint[] {
                     new Waypoint(0, 0, 0),
