@@ -56,7 +56,7 @@ public class SwerveDrive implements PIDOutput {
 		
 		double L = this.wheelbase; 					//distance between front and back wheels
 		double W = this.trackwidth; 				//distance between front wheels
-		double r = Math.sqrt ((L * L) + (W * W)); 	//radius of circle (actually it may be the diameter?)
+		double diameter = Math.sqrt ((L * L) + (W * W)); 	//radius of circle (actually it may be the diameter?)
         
 
 		
@@ -71,10 +71,10 @@ public class SwerveDrive implements PIDOutput {
 			directionY = temp;
 		}
 
-        double a = directionX - rotation * (L / r); //rear axle
-        double b = directionX + rotation * (L / r); //front axle
-        double c = directionY - rotation * (W / r); //left track
-        double d = directionY + rotation * (W / r); //right track
+        double a = directionX - rotation * (L / diameter); //rear axle
+        double b = directionX + rotation * (L / diameter); //front axle
+        double c = directionY - rotation * (W / diameter); //left track
+        double d = directionY + rotation * (W / diameter); //right track
         
         /*
          *                FRONT
